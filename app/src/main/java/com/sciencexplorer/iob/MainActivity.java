@@ -29,9 +29,6 @@ public class MainActivity extends Activity {
 
     Uri resulturi;
 
-    //Uri imageUri;
-    //Uri imageUri2;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,19 +73,6 @@ public class MainActivity extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-
-        /*if (data == null) {
-            //Log.d(TAG, "Data is null");
-            Toast.makeText(getActivity(), getString(R.string.general_error), Toast.LENGTH_LONG).show();
-        } else {*/
-        //Log.d(TAG, "Data: " + data);
-        // the intent has data, so set the media uri
-        //Log.d(TAG, "adding the data using the getData() method");
-        //mMediaUri = data.getData();
-        //Log.d(TAG, "Media Uri: " + mMediaUri);
-
-
-
         if(resultCode != RESULT_CANCELED){
 
             resulturi = data.getData();
@@ -102,45 +86,9 @@ public class MainActivity extends Activity {
 
                 imageView2.setImageURI(resulturi);
             }
-            /*switch (requestCode) {
-                case PICK_IMAGE_1:
-                    imageView.setImageURI(resulturi);
-                    break;
-                case PICK_IMAGE_2:
-                    imageView2.setImageURI(resulturi);
-                    break;
-
-
-            }*/
-
-
         }
     }
 }
-
-        /*if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
-            imageUri = data.getData();
-            imageView.setImageURI(imageUri);
-            imageUri2 = data.getData();
-            imageView2.setImageURI(imageUri2);
-        }*/
-
-    /*@Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
-        outState.putParcelable("picUri", resulturi);
-    }
-
-    @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-
-        resulturi = savedInstanceState.getParcelable("picUri");
-
-    }*/
-
-
 
 
 
